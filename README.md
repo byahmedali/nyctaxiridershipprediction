@@ -6,6 +6,9 @@ This application provides daily demand forecasting for Yellow and Green taxis ac
 
 The system combines Azure cloud services for data processing and model deployment with a user-friendly Streamlit frontend, allowing users to obtain demand predictions for specific dates, locations, and taxi types.
 
+## End-to-end Workflow
+![workflow](workflow.webp)
+
 ## Prerequisites
 - Python 3.10
 - Azure ML REST endpoint
@@ -17,10 +20,10 @@ The system combines Azure cloud services for data processing and model deploymen
 git clone https://github.com/byahmedali/nyctaxiridershipprediction.git
 cd nyctaxiridershipprediction
 ```
-2. **Create a `.env` file**
+2. **Create a `.env` file with following credentials:**
 ```
-REST_ENDPOINT=
-API_KEY=
+REST_ENDPOINT=YOUR_REST_ENDPOINT_HERE
+API_KEY=YOUR_API_KEY_HERE
 ```
 
 3. **Create and activate a virtual environment:**
