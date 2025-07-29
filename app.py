@@ -118,7 +118,7 @@ if st.button("Predict", type="primary"):
     with st.spinner("Making a prediction...", show_time=True):
         # Check for API key before making request
         if not api_key:
-            raise Exception("A key should be provided to invoke the endpoint.")
+            st.error("A key should be provided to invoke the endpoint.")
 
         # Set request headers for REST API
         headers = {'Content-Type':'application/json', 'Accept': 'application/json', 'Authorization':('Bearer '+ api_key)}
