@@ -1,0 +1,9 @@
+.gitignore
+.env
+/venv/
+/notebook/
+/data/
+UI.png
+workflow.webp
+README.md
+LICENSE
