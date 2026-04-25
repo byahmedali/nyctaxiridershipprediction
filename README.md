@@ -46,12 +46,13 @@ The system combines Azure cloud services for data processing and model deploymen
     **Option B: Using uv**
     ```
     uv sync
+    .venv\Scripts\activate
     ```
 
 ## Usage Instructions
 
 ### Option 1: Running from Source
-1. Ensure environment variables are properly set in the `.env` file
+1. Ensure environment variables are properly set in the `.env` file, newly created virtual environment is active.
 
 2. Run the Streamlit application in activated environment:
     ```
