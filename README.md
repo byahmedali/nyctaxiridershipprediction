@@ -10,47 +10,53 @@ The system combines Azure cloud services for data processing and model deploymen
 ![workflow](workflow.webp)
 
 ## Prerequisites
-- Python 3.10
-- Azure ML REST endpoint
-- API key for authentication
+- Python 3
+- pip or [uv](https://docs.astral.sh/uv/) package manager
+- Use Azure ML Studio (Automated ML) to train a model on clean data available in the [`/data/`](/data/) directory of this repository and acquire:
+    - Azure ML REST endpoint
+    - API key for authentication
 
 ## Setup & Installation
 1. **Clone the repository:**
-```
-git clone https://github.com/byahmedali/nyctaxiridershipprediction.git
-cd nyctaxiridershipprediction
-```
+    ```
+    git clone https://github.com/byahmedali/nyctaxiridershipprediction.git
+    cd nyctaxiridershipprediction
+    ```
 2. **Create a `.env` file with following credentials:**
-```
-REST_ENDPOINT=YOUR_REST_ENDPOINT_HERE
-API_KEY=YOUR_API_KEY_HERE
-```
+    ```
+    REST_ENDPOINT=YOUR_REST_ENDPOINT_HERE
+    API_KEY=YOUR_API_KEY_HERE
+    ```
+3. **Create and activate a virtual environment and install dependencies:**
 
-3. **Create and activate a virtual environment:**
-```
-# Windows
-py -3.10 -m venv venv
-venv\Scripts\activate
+    **Option A: Using pip**
+    ```
+    # Windows
+    python -m venv venv
+    venv\Scripts\activate
 
-# Linux/Mac
-py -3.10 -m venv venv
-source venv/bin/activate
-```
+    # Linux/Mac
+    python -m venv venv
+    source venv/bin/activate
 
-4. **Install required packages:**
-```
-pip install -r requirements.txt
-```
+    # Install packages
+    pip install -r requirements.txt
+    ```
+
+    **Option B: Using uv**
+    ```
+    uv sync
+    ```
 
 ## Usage Instructions
 
-### Option 1: Running Locally
+### Option 1: Running from Source
 1. Ensure environment variables are properly set in the `.env` file
 
 2. Run the Streamlit application in activated environment:
-```bash
-streamlit run app.py
-```
+    ```
+    streamlit run app.py
+    ```
 
 3. Access the application in your web browser (typically http://localhost:8501)
 
@@ -60,14 +66,14 @@ streamlit run app.py
 2. Create a `.env` file with your credentials as described in the Setup section
 
 3. Build the Docker image:
-```bash
-docker build -t nyc-demand-forecast .
-```
+    ```
+    docker build -t nyc-demand-forecast .
+    ```
 
 4. Run the container:
-```bash
-docker run -p 8501:8501 --env-file .env nyc-demand-forecast
-```
+    ```
+    docker run -p 8501:8501 --env-file .env nyc-demand-forecast
+    ```
 
 5. Access the application in your web browser at http://localhost:8501
 
@@ -75,7 +81,7 @@ docker run -p 8501:8501 --env-file .env nyc-demand-forecast
 - Select a date for prediction
 - Choose a pickup borough
 - Select taxi type (Yellow or Green)
-- Click "Predict" to get the demand forecast
+- Click `Predict` to get the demand forecast
 
 ## Data Source
 The application uses data from the [NYC Taxi Trip Records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), processed and maintained by the New York City Taxi and Limousine Commission (TLC).

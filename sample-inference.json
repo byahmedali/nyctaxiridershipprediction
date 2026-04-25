@@ -1,0 +1,21 @@
+{
+  "input_data": {
+    "columns": [
+      "PickupBorough",
+      "RideType",
+      "Year",
+      "Month",
+      "Day",
+      "Season",
+      "PublicHoliday",
+      "DayOfWeek",
+      "Workday"
+    ],
+    "index": [0, 1],
+    "data": [
+      ["Manhattan", "Yellow Taxi", 2026, 5, 15, "Spring", 0, "Fri", 1],
+      ["Brooklyn", "Green Taxi", 2027, 12, 25, "Winter", 1, "Sat", 0]
+    ]
+  },
+  "params": {}
+}
